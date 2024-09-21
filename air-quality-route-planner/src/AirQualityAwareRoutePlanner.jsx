@@ -155,8 +155,8 @@ const AirQualityAwareRoutePlanner = () => {
       <CardContent className="bg-gray-50 rounded-b-md">
         <Tabs defaultValue="route" className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-4">
-            <TabsTrigger value="route" className="text-blue-600">Plan Route</TabsTrigger>
-            <TabsTrigger value="local" className="text-blue-600">My Location</TabsTrigger>
+            {/* <TabsTrigger value="route" className="text-blue-600">Plan Route</TabsTrigger>
+            <TabsTrigger value="local" className="text-blue-600">My Location</TabsTrigger> */}
           </TabsList>
           <TabsContent value="route">
             <div className="mb-4 flex space-x-4">

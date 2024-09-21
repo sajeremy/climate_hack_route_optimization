@@ -2,14 +2,160 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Other global styles */
 body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #f0f4f8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo Styling */
+#logo-container {
+  width: 100%; /* Adjust width as necessary */
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+#logo-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header Section */
+header {
+  background: linear-gradient(to right, #00b09b, #96c93d);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  border-bottom: 5px solid #4CAF50;
+}
+
+header h1 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #f0f8ff;
+}
+
+/* Container */
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Section Styling */
+section {
+  background-color: #fff;
+  margin-bottom: 40px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+  font-size: 2.5em;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+section p, section ul {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #555;
+}
+
+section ul {
+  padding-left: 20px;
+}
+
+section ul li {
+  margin-bottom: 15px;
+}
+
+/* Button Style */
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #333;
+  color: white;
+  font-size: 1.1em;
+  border-top: 5px solid #4CAF50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  header p {
+    font-size: 1.2em;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  section h2 {
+    font-size: 2em;
+  }
+
+  section p, section ul {
+    font-size: 1.1em;
+  }
 }
