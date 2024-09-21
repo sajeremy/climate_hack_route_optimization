@@ -5,6 +5,7 @@ import { Button } from "./button";
 import { Input } from "./input";
 import { TabsList, TabsTrigger, Tabs, TabsContent } from "./tabs";
 import { MapPin, Navigation, Wind, Droplets, Sun } from 'lucide-react';
+import {Heatmap} from "./HeatMap";
 
 // Mock function to simulate route calculation
 const calculateRoute = (start, end) => {
@@ -55,7 +56,7 @@ const AirQualityIndicator = ({ value, max, label, icon: Icon }) => (
 
 const AirQualityRouteMap = ({ route }) => (
   <div className="relative w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-    {/* Placeholder for the map */}
+    <Heatmap/>
     <div className="absolute inset-0 flex items-center justify-center">
       <p className="text-gray-500">Map view placeholder</p>
     </div>

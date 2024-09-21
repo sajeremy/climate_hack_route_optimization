@@ -5,7 +5,7 @@ from fastapi.responses import JSONResponse, HTMLResponse
 from geo_place_loc import geo_places
 import folium 
 from folium.plugins import HeatMap
-# import osmnx as ox
+import osmnx as ox
 import networkx as nx
 
 # Read the CSV file
@@ -74,30 +74,30 @@ def get_heatmap():
     map_html = m._repr_html_()
     return map_html
 
-# # Define a route to suggest bike routes
-# @app.get("/bike-routes")
-# def get_bike_routes(start_lat: float, start_lon: float, end_lat: float, end_lon: float):
-#     # Load the graph for NYC
-#     G = ox.graph_from_place('New York City, New York, USA', network_type='bike')
+# Define a route to suggest bike routes
+@app.get("/bike-routes")
+def get_bike_routes(start_lat: float, start_lon: float, end_lat: float, end_lon: float):
+    # Load the graph for NYC
+    G = ox.graph_from_place('New York City, New York, USA', network_type='bike')
 
-#     # Find the nearest nodes to the start and end points
-#     orig_node = ox.distance.nearest_nodes(G, start_lon, start_lat)
-#     dest_node = ox.distance.nearest_nodes(G, end_lon, end_lat)
+    # Find the nearest nodes to the start and end points
+    orig_node = ox.distance.nearest_nodes(G, start_lon, start_lat)
+    dest_node = ox.distance.nearest_nodes(G, end_lon, end_lat)
 
-#     # Find the shortest path based on pollution levels
-#     def pollution_weight(u, v, data):
-#         lat_u, lon_u = G.nodes[u]['y'], G.nodes[u]['x']
-#         lat_v, lon_v = G.nodes[v]['y'], G.nodes[v]['x']
-#         pollution_u = df[(df['lat'] == lat_u) & (df['lon'] == lon_u)]['Pollution Level'].mean()
-#         pollution_v = df[(df['lat'] == lat_v) & (df['lon'] == lon_v)]['Pollution Level'].mean()
-#         return (pollution_u + pollution_v) / 2
+    # Find the shortest path based on pollution levels
+    def pollution_weight(u, v, data):
+        lat_u, lon_u = G.nodes[u]['y'], G.nodes[u]['x']
+        lat_v, lon_v = G.nodes[v]['y'], G.nodes[v]['x']
+        pollution_u = df[(df['lat'] == lat_u) & (df['lon'] == lon_u)]['Data Value'].mean()
+        pollution_v = df[(df['lat'] == lat_v) & (df['lon'] == lon_v)]['Data Value'].mean()
+        return (pollution_u + pollution_v) / 2
 
-#     route = nx.shortest_path(G, orig_node, dest_node, weight=pollution_weight)
+    route = nx.shortest_path(G, orig_node, dest_node, weight=pollution_weight)
 
-#     # Convert route to a list of coordinates
-#     route_coords = [(G.nodes[node]['y'], G.nodes[node]['x']) for node in route]
+    # Convert route to a list of coordinates
+    route_coords = [(G.nodes[node]['y'], G.nodes[node]['x']) for node in route]
 
-#     return {"route": route_coords}
+    return {"route": route_coords}
 
 # Run the server
 # Run the following command in your terminal:
