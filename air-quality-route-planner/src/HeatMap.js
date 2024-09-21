@@ -30,7 +30,6 @@ const HeatMap = () => {
 
     return (
         <div>
-            <h1>Heat Map</h1>
             <div dangerouslySetInnerHTML={{ __html: mapHtml }} />
         </div>
     );

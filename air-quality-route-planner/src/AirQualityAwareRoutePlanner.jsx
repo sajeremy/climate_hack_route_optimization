@@ -57,11 +57,6 @@ const AirQualityIndicator = ({ value, max, label, icon: Icon }) => (
 const AirQualityRouteMap = ({ route }) => (
   <div className="relative w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden shadow-lg">
     <Heatmap/>
-    <div className="absolute inset-0 flex items-center justify-center">
-      <p className="text-gray-500">Map view placeholder</p>
-    </div>
-
-    {/* Route visualization */}
     {route && (
       <svg className="absolute inset-0 w-full h-full">
         <path
