@@ -5,7 +5,7 @@ import { Button } from "./button";
 import { Input } from "./input";
 import { TabsList, TabsTrigger, Tabs, TabsContent } from "./tabs";
 import { MapPin, Navigation, Wind, Droplets, Sun } from 'lucide-react';
-import {Heatmap} from "./HeatMap";
+import Heatmap from "./HeatMap";
 
 // Mock function to simulate route calculation
 const calculateRoute = (start, end) => {

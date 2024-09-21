@@ -5,11 +5,9 @@ from fastapi.responses import JSONResponse, HTMLResponse
 from geo_place_loc import geo_places
 import folium 
 from folium.plugins import HeatMap
-<<<<<<< HEAD
 import osmnx as ox
 import networkx as nx
-=======
->>>>>>> 1a99a93c7e5f92b72d6e1910b3e3d0aba6569ac9
+from fastapi.middleware.cors import CORSMiddleware
 
 # Read the CSV file
 df = pd.read_csv('data/Air_Quality_20240921.csv')
@@ -21,6 +19,13 @@ df['lon'] = df['Geo Place Name'].map(lambda x: geo_places.get(x, {}).get('lon'))
 
 # Create FastAPI app
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust this to your frontend's URL in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Define Health Check
 @app.get("/health")
@@ -75,7 +80,6 @@ def get_heatmap():
     # Save map to HTML
     map_html = m._repr_html_()
     return map_html
-<<<<<<< HEAD
 
 # Define a route to suggest bike routes
 @app.get("/bike-routes")
@@ -105,5 +109,3 @@ def get_bike_routes(start_lat: float, start_lon: float, end_lat: float, end_lon:
 # Run the server
 # Run the following command in your terminal:
 # uvicorn main:app --reload
-=======
->>>>>>> 1a99a93c7e5f92b72d6e1910b3e3d0aba6569ac9
