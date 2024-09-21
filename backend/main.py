@@ -5,8 +5,11 @@ from fastapi.responses import JSONResponse, HTMLResponse
 from geo_place_loc import geo_places
 import folium 
 from folium.plugins import HeatMap
+<<<<<<< HEAD
 import osmnx as ox
 import networkx as nx
+=======
+>>>>>>> 1a99a93c7e5f92b72d6e1910b3e3d0aba6569ac9
 
 # Read the CSV file
 df = pd.read_csv('data/Air_Quality_20240921.csv')
@@ -55,7 +58,6 @@ def get_columns():
 # Define a route to generate heat map
 @app.get("/heatmap", response_class=HTMLResponse)
 def get_heatmap():
-
     # Filter the DataFrame for "Fine particles (PM 2.5)"
     filtered_df = df[df["Name"] == "Fine particles (PM 2.5)"]
 
@@ -64,15 +66,16 @@ def get_heatmap():
 
     # Add heat map data
     heat_data = [
-    [row['lat'], row['lon'], row['Data Value']]
-    for index, row in filtered_df.iterrows()
-    if row['lat'] is not None and row['lon'] is not None and row['Data Value'] is not None
-]
+        [row['lat'], row['lon'], row['Data Value']]
+        for index, row in filtered_df.iterrows()
+        if row['lat'] is not None and row['lon'] is not None and row['Data Value'] is not None
+    ]
     HeatMap(heat_data).add_to(m)
 
     # Save map to HTML
     map_html = m._repr_html_()
     return map_html
+<<<<<<< HEAD
 
 # Define a route to suggest bike routes
 @app.get("/bike-routes")
@@ -102,3 +105,5 @@ def get_bike_routes(start_lat: float, start_lon: float, end_lat: float, end_lon:
 # Run the server
 # Run the following command in your terminal:
 # uvicorn main:app --reload
+=======
+>>>>>>> 1a99a93c7e5f92b72d6e1910b3e3d0aba6569ac9
