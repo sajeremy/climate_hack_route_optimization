@@ -3,9 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AirVibe Rider: AI-Driven Air Pollution Dashboard</title>
+  <title>CyclAir: AI-Driven Air Pollution Dashboard</title>
   <style>
     /* General Styles */
+
+
+    #health-stats {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .stat-column {
+    flex: 1;
+    padding: 0 20px;
+  }
+
+  .stat-column h3 {
+    font-size: 4em; /* Makes the numbers large and eye-catching */
+    color: #4CAF50;
+    margin-bottom: 10px;
+  }
+
+  .stat-column p {
+    font-size: 1.2em;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+    }
+
+    .stat-column {
+      margin-bottom: 30px;
+    }
+  }
     * {
       margin: 0;
       padding: 0;
@@ -32,6 +72,48 @@
       height: auto;
       display: block;
     }
+
+    #solution-overview {
+    background-color: #ffffff;
+    padding: 50px 20px;
+  }
+
+  /* Flex container for solution items */
+  .solution-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+
+  /* Each column style */
+  .solution-column {
+    flex: 1;
+    padding: 0 20px;
+  }
+
+  .solution-column h3 {
+    font-size: 2.5em; /* Large heading for the solution items */
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+
+  .solution-column p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .solution-container {
+      flex-direction: column;
+    }
+
+    .solution-column {
+      margin-bottom: 30px;
+    }
+  }
 
     a {
       text-decoration: none;
@@ -148,6 +230,17 @@
         font-size: 1.1em;
       }
     }
+    .image-container {
+      border: 5px solid #ccc;
+      padding: 10px;
+      background-color: #fff;
+      text-align: center;
+      max-width: 800px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 
@@ -166,14 +259,17 @@
 
 
     <div id="logo-container">
-      <img src="CyclAirLogo.webp" alt="AirVibe Rider Logo" />
+      <img src="CyclAirLogo.webp" alt="Cyclair" />
     </div>
 
 
   <section id="executive-summary">
-    <h2>The Problem</h2>
+    <h2>Air Pollution remains an invisible and deadly threat to New Yorkers</h2>
     <p>
       Air pollution is a significant threat to public health, especially for bicycle commuters in New York City.
+    </p>
+    <p>
+
     </p>
     <p>
       Public officials have difficulty getting buy-in for their air pollution policies.
@@ -182,32 +278,125 @@
 
   </section>
 
-  <section id="problem-statement">
-    <h2>Problem Statement</h2>
-    <p>
-      NYC's congested streets expose cyclists to varying levels of air pollution, but there are currently no tools to help them plan cleaner routes. Public officials also lack localized data to evaluate the success of air quality regulations. Our dashboard addresses these gaps by providing real-time, hyper-local data that helps cyclists avoid polluted areas and supports officials in their policy assessments.
-    </p>
-  </section>
+  <!-- Health Statistics Section -->
+<section id="health-stats">
+  <div class="stats-container">
+    <div class="stat-column">
+      <h3>3,000</h3>
+      <p><b>premature deaths</b> <br>in NYC are attributed to fine particulate matter (PM2.5) exposure each year, according to the New York City Department of Health.</p>
+    </div>
+    <div class="stat-column">
+      <h3>2,000</h3>
+      <p><b>hospital admissions</b> <br> for respiratory and cardiovascular conditions each year.</p>
+    </div>
+    <div class="stat-column">
+      <h3>6,000</h3>
+      <p><b>emergency department visits</b> <br> annually due to asthma exacerbated by air pollution, particularly in vulnerable populations like children and the elderly.</p>
+    </div>
+  </div>
+</section>
 
+  <!-- <section id="problem-statement">
+    <h2>Exposure to Air Pollution depends on the street</h2>
+    <p>
+      NYC's congested streets expose cyclists to varying levels of air pollution, but there are currently <b>no tools to help them plan cleaner routes</b>. Public officials also lack localized data to evaluate the success of air quality regulations. Our dashboard addresses these gaps by providing real-time, hyper-local data that helps cyclists avoid polluted areas and supports officials in their policy assessments.
+    </p>
+  </section> -->
+
+  <section id="public-officials"> <h2>Localized Data for Policy Evaluation</h2> <p> Public officials in NYC currently lack access to localized data to evaluate the effectiveness of air quality regulations on a street-by-street basis. Our dashboard bridges this gap by offering real-time, hyper-local air pollution data, enabling more accurate assessments of policies and their impact on air quality throughout the city. </p> </section>
+
+  <section id="local-data"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <!-- Background -->
+    <rect x="0" y="0" width="200" height="200" fill="#f0f8f8"/>
+    
+    <!-- Skyline -->
+    <path d="M0 150 H40 V130 H60 V110 H80 V140 H100 V120 H120 V90 H140 V130 H160 V150 H200 V200 H0 Z" fill="#a0a0a0"/>
+    
+    <!-- Air quality indicator -->
+    <circle cx="100" cy="70" r="40" fill="#98d8d8" opacity="0.7"/>
+    
+    <!-- Grid lines -->
+    <line x1="20" y1="50" x2="180" y2="50" stroke="#d0d0d0" stroke-width="1"/>
+    <line x1="20" y1="90" x2="180" y2="90" stroke="#d0d0d0" stroke-width="1"/>
+    <line x1="60" y1="30" x2="60" y2="110" stroke="#d0d0d0" stroke-width="1"/>
+    <line x1="140" y1="30" x2="140" y2="110" stroke="#d0d0d0" stroke-width="1"/>
+    
+    <!-- Data points -->
+    <circle cx="60" cy="80" r="3" fill="#707070"/>
+    <circle cx="100" cy="60" r="3" fill="#707070"/>
+    <circle cx="140" cy="70" r="3" fill="#707070"/>
+  </svg></section>
+
+  <section id="cyclists"> <h2>Cleaner Routes for Cyclists</h2> <p> Cyclists in NYC are often exposed to varying levels of air pollution due to the city's congested streets, but they have <b>no tools to help plan cleaner routes</b>. Our dashboard provides real-time data on air pollution levels, empowering cyclists to choose routes with better air quality and reduce their exposure to harmful pollutants. </p> </section>
+  <section id="cyclist graphic">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <!-- Background -->
+    <rect x="0" y="0" width="200" height="200" fill="#f0f8f8"/>
+    
+    <!-- City grid -->
+    <path d="M20 20 H180 M20 60 H180 M20 100 H180 M20 140 H180 M20 180 H180" stroke="#d0d0d0" stroke-width="2"/>
+    <path d="M20 20 V180 M60 20 V180 M100 20 V180 M140 20 V180 M180 20 V180" stroke="#d0d0d0" stroke-width="2"/>
+    
+    <!-- Polluted route -->
+    <path d="M40 160 Q100 100 160 40" stroke="#a0a0a0" stroke-width="8" fill="none" stroke-linecap="round"/>
+    
+    <!-- Clean route -->
+    <path d="M40 160 Q70 130 100 100 Q130 70 160 40" stroke="#98d8d8" stroke-width="8" fill="none" stroke-linecap="round"/>
+    
+    <!-- Cyclist -->
+    <circle cx="40" cy="160" r="10" fill="#707070"/>
+    <path d="M35 155 L45 165 M35 165 L45 155" stroke="#f0f8f8" stroke-width="2"/>
+    
+    <!-- Destination -->
+    <circle cx="160" cy="40" r="10" fill="#98d8d8"/>
+    <path d="M155 35 L165 45 M155 45 L165 35" stroke="#f0f8f8" stroke-width="2"/>
+    
+    <!-- Air quality indicators -->
+    <circle cx="100" cy="100" r="15" fill="#a0a0a0" opacity="0.3"/>
+    <circle cx="70" cy="130" r="10" fill="#98d8d8" opacity="0.3"/>
+    <circle cx="130" cy="70" r="10" fill="#98d8d8" opacity="0.3"/>
+  </svg>
+</section>
   <section id="solution-overview">
     <h2>The Solution</h2>
-    <p>
-      This submission proposes an AI-driven Air Pollution Dashboard, designed to provide real-time route planning for cyclists, optimize clean air routes, and enable public officials to leverage crowdsourced data to track the success of their policies in improving air quality.
-    </p>
-    <p>
-      Our solution combines AI-optimized route suggestions, crowdsourced data collection via sensors, and AI-driven insights for policymakers, enabling healthier, more informed commuting decisions and supporting data-driven policy-making in NYC.
-    </p>
 
-    <p>
+  
+    <div class="solution-container">
+      <div class="solution-column">
+        <h3>AI-Powered Route Optimization</h3>
+        <p>Our AI optimizes cycling routes by:
+          <ul>
+            <li>Analyzing real-time air quality data to suggest the cleanest routes.</li>
+            <li>Factoring in historical data, weather patterns, and traffic conditions.</li>
+            <li>Adapting dynamically to provide cyclists with updated routes as conditions change.</li>
+          </ul>
+        </p>
+      </div>
+      <div class="solution-column">
+        <h3>Crowdsourced Air Pollution Data Collection</h3>
+        <p>Cyclists contribute to a richer data network by:
+          <ul>
+            <li> Purchasing affordable sensors to monitor air quality in real-time.</li>
+            <li> Automatically uploading sensor data to help improve the dashboard’s accuracy.</li>
+            <li> Accessing personalized, hyper-local air quality data through the dashboard.</li>
+          </ul>
+        </p>
+      </div>
+      <div class="solution-column">
+        <h3>AI Insights for Public Officials</h3>
+        <p>Policymakers benefit by being able to:
+          <ul>
+            <li> Track air quality <b>before and after a policy intervention per neighborhood</b>.</li>
+            <li> Choose neighborhoods for further <b>transportation policy interventions</b> based on the data.</li>
+            <li> Get the <b>data communicated in easy-to-understand language</b> for NYC residents to be aware of when casting their ballots at the coming election.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </section>
 
-
-      Our Air Pollution Dashboard uses AI to predict the cleanest air routes for cyclists based on real-time sensor data. Key components include:
-    </p>
-    <ul>
-      <li><strong>AI-Powered Route Optimization:</strong> AI analyzes real-time air quality data to predict clean cycling routes, factoring in historical data, weather, and traffic.</li>
-      <li><strong>Crowdsourced Data Collection via Sensors:</strong> Cyclists can purchase affordable sensors to monitor air quality and contribute data to the growing network.</li>
-      <li><strong>AI Insights for Public Officials:</strong> Policymakers can track air quality improvements and measure the impact of their policies using detailed, localized data.</li>
-    </ul>
+  <section id="route-opti">
+    <img src="hotspots.jpg" alt="Hotspot map">
   </section>
 
   <section id="ai-integration">
